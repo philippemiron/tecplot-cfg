@@ -20,6 +20,54 @@ $!REDRAWALL
 $!SYSTEM "/bin/rm -f /tmp/reload123.lay"
 $!ENDMACROFUNCTION
 
+$!MACROFUNCTION NAME = "Vorticity (2D)"
+	ShowInMacroPanel = True
+
+$!PROMPTFORTEXTSTRING |U|
+INSTRUCTIONS = "Enter the variable number for U"
+$!PROMPTFORTEXTSTRING |V|
+INSTRUCTIONS = "Enter the variable number for V"
+$!PROMPTFORTEXTSTRING |MAX|
+    INSTRUCTIONS = "Enter min/max value of Vorticity contour"
+
+$!GLOBALTWODVECTOR UVAR = |U|
+$!GLOBALTWODVECTOR VVAR = |V|
+
+$!EXTENDEDCOMMAND 
+  COMMANDPROCESSORID = 'CFDAnalyzer4'
+  COMMAND = 'SetFieldVariables ConvectionVarsAreMomentum=\'F\' UVar=|U| VVar=|V| WVar=0 ID1=\'NotUsed\' Variable1=0 ID2=\'NotUsed\' Variable2=0'
+$!EXTENDEDCOMMAND 
+  COMMANDPROCESSORID = 'CFDAnalyzer4'
+  COMMAND = 'Calculate Function=\'ZVORTICITY\' Normalization=\'None\' ValueLocation=\'Nodal\' CalculateOnDemand=\'T\' UseMorePointsForFEGradientCalculations=\'F\''
+
+# Switch to Vorticy contour
+$!FIELDLAYERS SHOWCONTOUR = YES
+$!SETCONTOURVAR 
+  VAR = |NUMVARS|
+  CONTOURGROUP = 1
+  
+# Remove legend
+$!GLOBALCONTOUR 1  LEGEND{SHOW = NO}
+  
+$!CONTOURLEVELS DELETERANGE RANGEMIN = |minc| RANGEMAX = |maxc|
+$!Varset |Delta| = ((2*|MAX|)/(25))
+$!Varset |Level| = (-|MAX| - |Delta|)
+$!Loop 26
+  $!Varset |Level| = (|Level| + |Delta|)
+  $!CONTOURLEVELS ADD
+  CONTOURGROUP = 1
+  RAWDATA
+  1
+  |Level|
+$!Endloop
+
+$!REMOVEVAR |U|
+$!REMOVEVAR |V|
+$!REMOVEVAR |MAX|
+$!REMOVEVAR |Delta|
+$!REMOVEVAR |Level|
+$!ENDMACROFUNCTION
+
 # Macro to set Custom1 paper size
 $!MACROFUNCTION NAME = "PaperSize"
 	ShowInMacroPanel = True
