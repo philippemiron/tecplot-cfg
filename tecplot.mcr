@@ -20,6 +20,18 @@ $!REDRAWALL
 $!SYSTEM "/bin/rm -f /tmp/reload123.lay"
 $!ENDMACROFUNCTION
 
+# Windows version
+# Macro to save layout and read layout to simplify reading changing data sets.
+#$!MACROFUNCTION NAME = "Auto-Reload (a)"
+#KeyStroke = "a"
+#ShowInMacroPanel = True
+#$!SAVELAYOUT  "reload123.lay"
+#USERELATIVEPATHS = YES
+#$!OPENLAYOUT  "reload123.lay"
+#$!REDRAWALL
+#$!SYSTEM "cmd /C del reload123.lay"
+#$!ENDMACROFUNCTION
+
 $!MACROFUNCTION NAME = "Vorticity (2D)"
 	ShowInMacroPanel = True
 
