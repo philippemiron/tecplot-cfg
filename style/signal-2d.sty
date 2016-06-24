@@ -1,0 +1,204 @@
+#!MC 1410
+$!SETSTYLEBASE FACTORY
+$!PLOTTYPE  = XYLINE
+$!LINKING 
+  BETWEENFRAMES
+    {
+    LINKXAXISRANGE = YES
+    LINKYAXISRANGE = YES
+    }
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  SHOWHEADER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0
+    Y = 0
+    }
+  WIDTH = 3.25
+  HEIGHT = 2
+$!THREEDAXIS 
+  ASPECTRATIOLIMIT = 25
+  BOXASPECTRATIOLIMIT = 25
+$!GLOBALTIME 
+  SOLUTIONTIME = 0
+$!DELETELINEMAPS 
+$!ACTIVELINEMAPS  =  [1]
+$!GLOBALLINEPLOT 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+  LEGEND
+    {
+    XYPOS
+      {
+      X = 95
+      }
+    }
+$!LINEMAP  [1]
+  NAME = '&DV&'
+  ASSIGN
+    {
+    ZONE = 1
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!LINEMAP  [2]
+  NAME = '&DV&'
+  ASSIGN
+    {
+    ZONE = 1
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYLINEAXIS 
+  DEPXTOYRATIO = 1
+$!XYLINEAXIS 
+  XDETAIL 1
+    {
+    RANGEMIN = -31.670037932036990469
+    RANGEMAX = 430.70993793203695077
+    GRSPACING = 100
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        FONTFAMILY = 'CMU Serif'
+        SIZEUNITS = POINT
+        HEIGHT = 9
+        }
+      }
+    TITLE
+      {
+      TEXTSHAPE
+        {
+        FONTFAMILY = 'CMU Serif'
+        SIZEUNITS = POINT
+        HEIGHT = 10
+        }
+      OFFSET = 6
+      }
+    }
+$!XYLINEAXIS 
+  XDETAIL 2
+    {
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.1
+    }
+$!XYLINEAXIS 
+  XDETAIL 3
+    {
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.1
+    }
+$!XYLINEAXIS 
+  XDETAIL 4
+    {
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.1
+    }
+$!XYLINEAXIS 
+  XDETAIL 5
+    {
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.1
+    }
+$!XYLINEAXIS 
+  YDETAIL 1
+    {
+    RANGEMIN = 4.0054817492431569192
+    RANGEMAX = 7.2818359644943289055
+    GRSPACING = 1
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        FONTFAMILY = 'CMU Serif'
+        SIZEUNITS = POINT
+        HEIGHT = 9
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'u [px/s]'
+      TEXTSHAPE
+        {
+        FONTFAMILY = 'CMU Serif'
+        SIZEUNITS = POINT
+        HEIGHT = 10
+        }
+      OFFSET = 5
+      }
+    }
+$!XYLINEAXIS 
+  YDETAIL 2
+    {
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.1
+    }
+$!XYLINEAXIS 
+  YDETAIL 3
+    {
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.1
+    }
+$!XYLINEAXIS 
+  YDETAIL 4
+    {
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.1
+    }
+$!XYLINEAXIS 
+  YDETAIL 5
+    {
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.1
+    }
+$!SETSTYLEBASE CONFIG
